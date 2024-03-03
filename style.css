@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: linear-gradient(135deg, #364a72, #390e43);
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #364a72, #390e43);
+    padding: 20px;
+    padding-left: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #f4f4f4;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e0e8ed;
+    margin-right: 50px;
+}
+
+.container input[type="text"] {
+    width: calc(100% - 70px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container button {
+    width: 90px;
+    height: auto;
+    padding: 10px;
+    background-color: #63b8dc;
+    color: #19496f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+.container button:hover {
+    background-color: #96a9b4;
+}
+
+.task {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task li {
+    background-color: #e3b6b6;
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.task li::before {
+    content: '';
+    position: absolute;
+    height: 12px; /* Reduced height */
+    width: 12px; /* Reduced width */
+    border-radius: 50%;
+    background-color: red;
+    left: 10px; /* Adjusted left position */
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%); /* Centered vertically */
+    cursor: pointer;
+}
+
+.task li::after {
+    content: '×'; /* Displaying a cross sign for delete */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 10px; /* Adjust the font size as needed */
+    display: none; /* Initially hide the delete cross */
+}
+
+.task li:hover::after {
+    display: block; /* Show the delete cross on hover */
+}
+
+
+
+
+
+.task li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
